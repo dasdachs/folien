@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+
+import Slide from "./Slide";
+
+import "./App.css";
+
+const slides = [
+    {title: "Test", content: "Test data all the way"},
+    {title: "Test 2", content: "Some more test data"},
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [ slideIndex, setSlideIndex ] = useState(0);
+
+    const handleMovement = (e:KeyboardEvent ): void => {
+        switch(e.key) {
+        case "ArrowDown":
+            setSlideIndex((slideIndex + slides.length - 1) % slides.length);
+            break;
+        case "ArrowUp":
+            setSlideIndex((slideIndex + 1) % slides.length);
+            break;
+        default:
+            break;
+        }
+
+    };
+
+    useEffect(() => {
+        document.addEventListener("keyup", handleMovement);
+
+        return() => {
+            document.removeEventListener("keyup", handleMovement);
+        };
+    });
+
+    return (
+        <div className="slide">
+            <Slide title={slides[slideIndex].title} content={slides[slideIndex].content} />
+        </div>
+    );
 }
 
 export default App;
