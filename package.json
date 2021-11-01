@@ -1,0 +1,25 @@
+{
+  "name": "folien",
+  "description": "A collection of tools to render markdown to slides.",
+  "keywords": [
+    "slides",
+    "markdown",
+    "parser",
+    "unified",
+    "react",
+    "static site generator"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Jani Šumak",
+    "email": "jani.sumak@gmail.com",
+    "url": "https://blog.firstbulb.xyz"
+  },
+  "devDependencies": {
+    "typescript": "4.4.3"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "packageManager": "yarn@3.0.2"
+}

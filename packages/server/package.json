@@ -1,0 +1,30 @@
+{
+  "name": "@folien/server",
+  "license": "MIT",
+  "author": {
+    "name": "Jani Šumak",
+    "email": "jani.sumak@gmail.com",
+    "url": "https://blog.firstbulb.xyz"
+  },
+  "scripts": {
+    "start": "tsc-watch -b -v --noClear --onSuccess \"node dist/index.js\"",
+    "build": "tsc -b",
+    "lint": "eslint --fix src/**/*.ts",
+    "test:unit": "jest --verbose",
+    "test:watch": "jest --verbose --watch"
+  },
+  "dependencies": {
+    "@types/node": "16.10.3",
+    "fastify": "3.22.0",
+    "typescript": "4.4.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "4.33.0",
+    "@typescript-eslint/parser": "4.33.0",
+    "eslint": "7.32.0",
+    "jest": "27.2.4",
+    "prettier": "2.4.1",
+    "tsc-watch": "4.5.0"
+  },
+  "packageManager": "yarn@3.0.2"
+}
