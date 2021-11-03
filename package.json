@@ -1,6 +1,7 @@
 {
   "name": "folien",
   "description": "A collection of tools to render markdown to slides.",
+  "version": "0.1.0",
   "keywords": [
     "slides",
     "markdown",
