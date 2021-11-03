@@ -1,11 +1,11 @@
 {
-  "name": "simple-cli",
+  "name": "@folien/cli",
   "version": "1.1.0",
-  "description": "Basic Markdown slides example",
+  "description": "CLI to convert markdown files to HTML slides/static pages.",
+  "packageManager": "yarn@3.1.0",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules yarn jest"
   },
   "bin": {
     "loader": "src/index.js"
@@ -14,9 +14,16 @@
     "markdown",
     "slides",
     "remark",
+    "cli",
+    "commander",
+    "rehype",
     "unified"
   ],
-  "author": "Jani Šumak <jani.sumak@gmail.com>",
+  "author": {
+    "name": "Jani Šumak",
+    "email": "jani.sumak@gmail.com",
+    "url": "https://blog.firstbulb.xyz"
+  },
   "license": "MIT",
   "dependencies": {
     "chalk": "4.1.2",

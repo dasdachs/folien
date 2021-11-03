@@ -10,7 +10,7 @@
     "start": "tsc-watch -b -v --noClear --onSuccess \"node dist/index.js\"",
     "build": "tsc -b",
     "lint": "eslint --fix src/**/*.ts",
-    "test:unit": "jest --verbose",
+    "test": "jest --verbose",
     "test:watch": "jest --verbose --watch"
   },
   "dependencies": {
