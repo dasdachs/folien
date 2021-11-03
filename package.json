@@ -1,7 +1,17 @@
 {
-  "name": "folien",
+  "name": "root",
   "description": "A collection of tools to render markdown to slides.",
-  "version": "0.1.0",
+  "version": "1.1.0",
+  "scripts": {
+    "test": "yarn workspaces foreach -ipv run test"
+  },
+  "packageManager": "yarn@3.1.0",
+  "workspaces": [
+    "./packages/*"
+  ],
+  "devDependencies": {
+    "typescript": "4.4.3"
+  },
   "keywords": [
     "slides",
     "markdown",
@@ -15,12 +25,5 @@
     "name": "Jani Šumak",
     "email": "jani.sumak@gmail.com",
     "url": "https://blog.firstbulb.xyz"
-  },
-  "devDependencies": {
-    "typescript": "4.4.3"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "packageManager": "yarn@3.0.2"
+  }
 }

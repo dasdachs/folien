@@ -1,1 +1,22 @@
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
+node_modules
+
+# Build
 dist
+Build
+
+# Coverage
+coverage
+
+# Misc
+.vscode
+.idea
+.DS_Store
