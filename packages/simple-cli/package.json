@@ -1,13 +1,14 @@
 {
   "name": "simple-cli",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Basic Markdown slides example",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "bin": {
-    "loader": "./src/index.js"
+    "loader": "src/index.js"
   },
   "keywords": [
     "markdown",

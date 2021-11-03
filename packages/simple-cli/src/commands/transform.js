@@ -10,26 +10,34 @@ import { reporter } from "vfile-reporter";
 import { unified } from "unified";
 import remarkGfm from "remark-gfm";
 
-import attacher from "./plugin.js";
+import slidesPlugin from "../reHypePlugin/plugin.js";
 
-export default function prepare_pipeline(pathToFile, cssFile) {
+/**
+ * preparePipeline defines the unified.js pipeline and inject the html link (css) headers and js scripts.
+ *
+ * @param {string} pathToFile - relative or absolute path to file you are transforming
+ * @param {string[]} [cssFiles] - path to the css style sheet. Css file were be concatenated with the default styles.
+ * @param {string[]} [prismaFiles] - path to the prism.js style sheets and javascript files. Prisma files will be concatenated
+ */
+export default function preparePipeline(pathToFile, cssFiles, prismaFiles) {
   const title = path.basename(pathToFile, ".md");
 
-  const css = [
+  let css = [
     "https://unpkg.com/reset-css/reset.css",
     "./static/vendor/prism.css",
     "./static/slides.css",
   ];
 
-  if (cssFile) {
-    css.push(cssFile);
+  if (cssFiles) {
+    css.concat(cssFiles);
+    css = [...css, ...cssFiles];
   }
 
   unified()
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkRehype)
-    .use(attacher)
+    .use(slidesPlugin)
     .use(rehypeDocument, {
       title,
       responsive: true,

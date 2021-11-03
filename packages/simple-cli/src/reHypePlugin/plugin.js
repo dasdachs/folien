@@ -1,5 +1,3 @@
-import { visit } from "unist-util-visit";
-
 function crateNewSection() {
   return {
     type: "element",
@@ -11,7 +9,7 @@ function crateNewSection() {
   };
 }
 
-export default function attacher() {
+export default function reHypeSlides() {
   return transformer;
 
   function transformer(tree) {
