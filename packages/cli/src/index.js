@@ -11,9 +11,10 @@ program
     `Transforms your markdown files to html slides.\nSlides are separated with thematic breaks.\n\nFor more info got to https:/github.com/dasdachs/folien`
   )
   .argument("<file>", "path to markdown file")
+  .option("-o, --out <file>", "output path")
   .option("-c, --css <files...>", "include custom style sheets.")
   .action((file, options) => {
-    transform(file, options.css);
+    transform(file, options.out, options.css);
   });
 
 program.parse(process.argv);
